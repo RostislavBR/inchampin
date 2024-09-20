@@ -1,0 +1,34 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+.about_text_wrapper {
+
+  .about_text {
+    font-size: $font-size-16;
+    font-weight: $text-normal;
+    line-height: 160%;
+    color: $black-111;
+    text-transform: uppercase;
+    transition: font-size 0.2s ease-in-out;
+
+    span {
+      color: $blue-2f8;
+    }
+
+    @include breakpoint-xs {
+      font-size: $font-size-11;
+    }
+
+    @include breakpoint-md {
+      font-size: $font-size-12;
+    }
+
+    @include breakpoint-sm {
+      font-size: $font-size-12;
+    }
+
+    @include breakpoint-xl {
+      font-size: $font-size-20;
+    }
+  }
+}

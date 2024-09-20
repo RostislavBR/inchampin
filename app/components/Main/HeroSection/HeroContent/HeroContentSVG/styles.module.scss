@@ -1,0 +1,184 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+@keyframes drawAndFill {
+  0% {
+    stroke-dashoffset: 1000;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
+
+.hero_svg_wrapper {
+  @include flex($justify: normal, $align: center);
+  width: 100%;
+  max-width: 717px;
+
+  transition: max-width 0.2s ease-in-out;
+
+  svg {
+    path {
+      fill: black;
+      stroke: black;
+      stroke-width: 2;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      fill-opacity: 0;
+
+      animation: drawAndFill 1.2s ease-in-out forwards;
+    }
+
+    &.animate {
+      path {
+        animation: drawAndFill 1.2s ease-in-out forwards;
+      }
+    }
+  }
+
+  .hero_svg_one {
+    @include svg-logo-style($width: 14px, $height: 112px, $margin: 0 25px 0 0);
+  }
+
+  .hero_svg_two {
+    @include svg-logo-style($width: 91px, $height: 112px, $margin: 0 19px 0 0);
+  }
+
+  .hero_svg_three {
+    @include svg-logo-style($width: 98px, $height: 112px, $margin: 0 17px 0 0);
+  }
+
+  .hero_svg_four {
+    @include svg-logo-style($width: 92px, $height: 112px, $margin: 0 14px 0 0);
+  }
+
+  .hero_svg_five {
+    @include svg-logo-style($width: 105px, $height: 112px, $margin: 0 14px 0 0);
+  }
+
+  .hero_svg_six {
+    @include svg-logo-style($width: 79px, $height: 112px, $margin: 0 14px 0 0);
+  }
+
+  .hero_svg_seven {
+    @include svg-logo-style($width: 15px, $height: 112px, $margin: 0 25px 0 0);
+  }
+
+  .hero_svg_eight {
+    @include svg-logo-style($width: 91px, $height: 112px);
+  }
+
+  @include breakpoint-md {
+    max-width: 556px;
+
+    .hero_svg_one {
+      @include svg-logo-style($width: 14px, $height: 112px, $margin: 0 21px 0 0);
+    }
+
+    .hero_svg_two {
+      @include svg-logo-style($width: 91px, $height: 112px, $margin: 0 12px 0 0);
+    }
+
+    .hero_svg_three {
+      @include svg-logo-style($width: 98px, $height: 112px, $margin: 0 12px 0 0);
+    }
+
+    .hero_svg_four {
+      @include svg-logo-style($width: 92px, $height: 112px, $margin: 0 8px 0 0);
+    }
+
+    .hero_svg_five {
+      @include svg-logo-style($width: 105px, $height: 112px, $margin: 0 9px 0 0);
+    }
+
+    .hero_svg_six {
+      @include svg-logo-style($width: 79px, $height: 112px, $margin: 0 14px 0 0);
+    }
+
+    .hero_svg_seven {
+      @include svg-logo-style($width: 15px, $height: 112px, $margin: 0 17px 0 0);
+    }
+
+    .hero_svg_eight {
+      @include svg-logo-style($width: 91px, $height: 112px, $margin: 0 7px 0 0);
+    }
+  }
+  
+  @include breakpoint-xs {
+    max-width: 320px;
+
+    .hero_svg_one {
+      @include svg-logo-style($width: 6px, $height: 50px, $margin: 0 11px 0 0);
+    }
+
+    .hero_svg_two {
+      @include svg-logo-style($width: 40px, $height: 50px, $margin: 0 8px 0 0);
+    }
+
+    .hero_svg_three {
+      @include svg-logo-style($width: 43px, $height: 50px, $margin: 0 9px 0 0);
+    }
+
+    .hero_svg_four {
+      @include svg-logo-style($width: 40px, $height: 50px, $margin: 0 8px 0 0);
+    }
+
+    .hero_svg_five {
+      @include svg-logo-style($width: 46px, $height: 50px, $margin: 0 6px 0 0);
+    }
+
+    .hero_svg_six {
+      @include svg-logo-style($width: 35px, $height: 50px, $margin: 0 8px 0 0);
+    }
+
+    .hero_svg_seven {
+      @include svg-logo-style($width: 7px, $height: 50px, $margin: 0 11px 0 0);
+    }
+
+    .hero_svg_eight {
+      @include svg-logo-style($width: 40px, $height: 50px, $margin: 0 0 0 0);
+    }
+  }
+
+  @include breakpoint-sm {
+    max-width: 688px;
+  }
+
+  @include breakpoint-xl {
+    max-width: 862px;
+
+    .hero_svg_one {
+      @include svg-logo-style($width: 16px, $height: 132px, $margin: 0 30px 0 0);
+    }
+
+    .hero_svg_two {
+      @include svg-logo-style($width: 108px, $height: 132px, $margin: 0 23px 0 0);
+    }
+
+    .hero_svg_three {
+      @include svg-logo-style($width: 117px, $height: 132px, $margin: 0 21px 0 0);
+    }
+
+    .hero_svg_four {
+      @include svg-logo-style($width: 109px, $height: 132px, $margin: 0 16px 0 0);
+    }
+
+    .hero_svg_five {
+      @include svg-logo-style($width: 125px, $height: 132px, $margin: 0 19px 0 0);
+    }
+
+    .hero_svg_six {
+      @include svg-logo-style($width: 93px, $height: 132px, $margin: 0 21px 0 0);
+    }
+
+    .hero_svg_seven {
+      @include svg-logo-style($width: 17px, $height: 132px, $margin: 0 30px 0 0);
+    }
+
+    .hero_svg_eight {
+      @include svg-logo-style($width: 108px, $height: 132px);
+    }
+  }
+}

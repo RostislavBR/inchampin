@@ -1,0 +1,45 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+
+.play_button_wrapper {
+  width: 110px;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  border-radius: 50%;
+
+  opacity: 1;
+  transition: opacity 0.2ms ease;
+
+  position: absolute;
+  z-index: 96;
+
+
+  .play_button {
+    @include flex();
+
+    width: 100%;
+    height: 100%;
+    gap: 5px;
+
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition: all 0.2ms ease;
+    outline: none;
+
+    span {
+      font-size: $font-size-14;
+      font-weight: $text-normal;
+      line-height: 160%;
+      text-transform: uppercase;
+      color: white;
+    }
+  }
+}

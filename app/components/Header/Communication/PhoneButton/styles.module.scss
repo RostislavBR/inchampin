@@ -1,0 +1,49 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+.phone_button_wrapper {
+  display: none;
+
+  width: 43px;
+  height: 43px;
+
+  border: 1px solid #D7D7D7;
+  border-radius: 50%;
+
+  transition: all 0.3s ease-in-out;
+
+  svg path {
+    transition: fill 0.3s ease-in-out 0.1s;
+  }
+
+  &:hover {
+    background-color: $blue-2f8;
+    border-color: $blue-2f8;
+    scale: 1.2;
+
+    svg path {
+      fill: $white-fff;
+    }
+  }
+
+  &:focus {
+    background-color: $blue-2f8;
+    border-color: $blue-2f8;
+
+    svg path {
+      fill: $white-fff;
+    }
+  }
+
+  @include breakpoint-xs {
+    @include flex();
+
+    border-color: $blue-2f8;
+  }
+
+  @include breakpoint-sm {
+    @include flex();
+
+    order: 2;
+  }
+}

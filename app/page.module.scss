@@ -1,17 +1,30 @@
-.page {
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-}
+@import "@styles/variables";
+@import "@styles/mixins";
 
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+.page {
+  @include flex();
+
+  width: 100%;
+  padding: 100px 40px 30px 40px;
+
+
+  transition: padding 0.2s ease-in-out;
+  background: $white-fff;
+
+  @include breakpoint-xs {
+    padding: 81px 0 20px 0;
+  }
+
+  @include breakpoint-sm {
+    padding: 126px 0 40px 0;
+  }
+
+  @include breakpoint-md {
+    padding: 103px 30px 30px;
+  }
+
+  @include breakpoint-xl {
+    padding: 131px 80px 30px 80px;
+  }
 }
 

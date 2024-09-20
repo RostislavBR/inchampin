@@ -1,0 +1,138 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+.popup_form_container {
+  width: 100%;
+  max-width: 454px;
+
+  .popup_form {
+    @include flex($direction: column);
+    width: 100%;
+    gap: 40px;
+
+    .popup_form_label {
+      @include flex($direction: column);
+      width: 100%;
+      position: relative;
+
+      .popup_form_input {
+        width: 100%;
+        font-size: $font-size-16;
+        font-weight: $text-normal;
+        color: $black-000;
+        padding: 13px 0 5px 0;
+        border: none;
+        border-bottom: 1px solid $border;
+        outline: none;
+        background-color: transparent;
+
+        &::placeholder {
+          color: transparent;
+        }
+
+
+        @include breakpoint-xs {
+          font-size: $font-size-11;
+        }
+      }
+
+      .placeholder {
+        font-size: $font-size-16;
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.5);
+
+        transition: all 0.3s ease-in-out;
+
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+
+        pointer-events: none;
+
+        @include breakpoint-xs {
+          font-size: $font-size-11;
+        }
+      }
+
+      &.floating .placeholder {
+        top: -10px;
+        font-size: 12px;
+        color: $black-000;
+      }
+
+      .input_error {
+        @include flex($justify: end);
+
+        width: 100%;
+        height: 100%;
+        font-size: $font-size-12;
+        font-weight: $text-normal;
+        color: $red-E32636;
+
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+
+        position: absolute;
+        top: -20px;
+
+        &:after {
+          content: '';
+          width: 100%;
+          height: 1px;
+
+          background: $red-E32636;
+          position: absolute;
+          left: 0;
+          bottom: -20px;
+        }
+      }
+    }
+
+    .popup_form_button_wrapper {
+      @include flex($direction: column);
+      gap: 30px;
+
+      p {
+        font-weight: $text-normal;
+        font-size: $font-size-12;
+        line-height: 14px;
+        text-align: center;
+
+        span {
+          border-bottom: solid rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .popup_form_button {
+        @include flex();
+
+        width: 100%;
+        max-width: 228px;
+        font-size: $font-size-14;
+        font-weight: $text-semiBold;
+        letter-spacing: 1.4px;
+        color: $white-fff;
+        padding: 24px 69px;
+
+        background: $blue-2f8;
+        border: none;
+        border-radius: 100px;
+
+        @include breakpoint-xs {
+          max-width: 170px;
+        }
+
+        @include breakpoint-sm {
+          max-width: 170px;
+        }
+
+        @include breakpoint-md {
+          max-width: 170px;
+        }
+      }
+    }
+  }
+}
+
+

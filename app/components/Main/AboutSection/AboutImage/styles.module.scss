@@ -1,0 +1,54 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+.about_image_wrapper {
+  width: 567px;
+  height: 720px;
+  overflow: hidden;
+  //
+  //span {
+  //  font-size: $font-size-13;
+  //  font-weight: $text-normal;
+  //  line-height: 140%;
+  //  text-align: right;
+  //  text-transform: uppercase;
+  //  color: #2F80ED;
+  //}
+
+
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+
+  .about_image {
+    @include image-style();
+
+    @include breakpoint-xs {
+      max-width: 296px;
+      min-height: 100%;
+    }
+  }
+
+  @include breakpoint-xl {
+    width: 733px;
+    height: 900px;
+  }
+
+  @include breakpoint-md {
+    width: 408px;
+    height: 514px;
+  }
+
+  @include breakpoint-sm {
+    width: 290px;
+    height: 409px;
+  }
+
+  @include breakpoint-xs {
+    width: 290px;
+    height: 403px;
+  }
+
+  @include breakpoint-custom {
+    width: 230px;
+    height: 403px;
+  }
+}

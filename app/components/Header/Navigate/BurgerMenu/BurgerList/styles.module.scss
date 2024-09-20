@@ -1,0 +1,10 @@
+@import "@styles/variables";
+@import "@styles/mixins";
+
+.list {
+  @include flex-center-vertical();
+
+  width: 100%;
+  gap: 20px;
+  padding: 40px 15px;
+}

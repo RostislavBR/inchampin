@@ -1,0 +1,18 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+.logo_wrapper {
+  @include flex();
+
+  flex-grow: 1;
+
+  @include breakpoint-xs {
+    max-width: 140px;
+    flex-grow: 0;
+    padding: 0 0 0 10px;
+  }
+
+  @include breakpoint-sm {
+    order: 3;
+  }
+}

@@ -1,0 +1,118 @@
+@import "@styles/variables";
+@import "@styles/mixins";
+
+.header {
+  @include flex($justify: normal);
+
+  width: 100%;
+  max-height: 100px;
+
+  padding: 30px 40px;
+  transition: padding 0.2s ease-in-out;
+
+  background: #ffffff;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  .header_container {
+    @include flex($justify: space-between);
+
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    transition: max-width 0.2s ease-in-out;
+
+    @include breakpoint-xs {
+      @include flex($justify: space-between);
+
+      max-width: 767px;
+      gap: 30px;
+    }
+
+    @include breakpoint-sm {
+      max-width: 1023px;
+      padding: 23px 0 0 0;
+    }
+
+    @include breakpoint-md {
+      max-width: 1280px;
+    }
+
+    @include breakpoint-xl {
+      max-width: 1920px;
+    }
+  }
+
+  .header_menu_wrapper {
+    @include flex(space-between, center, row, wrap);
+
+    gap: 12px;
+    margin: 0 39px 0 0;
+
+    .header_menu_text {
+      font-size: $font-size-13;
+      font-weight: $text-semiBold;
+      line-height: 100%;
+      letter-spacing: 1.05px;
+      color: $black-111;
+      text-transform: uppercase;
+      transition: font-size 0.2s ease-in-out;
+
+      @include breakpoint-xs {
+        display: none;
+      }
+
+      @include breakpoint-md {
+        font-size: $font-size-12;
+        letter-spacing: 0.84px;
+      }
+
+      @include breakpoint-xl {
+        font-size: $font-size-15;
+      }
+    }
+
+    @include breakpoint-xs {
+      padding: 7px 0 0 0;
+      margin: 0;
+    }
+
+    @include breakpoint-sm {
+      order: 1;
+      margin: 0 56px 0 0;
+    }
+
+    @include breakpoint-md {
+      gap: 10px;
+      margin: 0 25px 0 0;
+    }
+
+    @include breakpoint-xl {
+      gap: 15px;
+      margin: 0 43px 0 0;
+    }
+  }
+
+  @include breakpoint-xs {
+    padding: 17px 20px 20px;
+  }
+
+  @include breakpoint-sm {
+    padding: 20px 40px;
+  }
+
+  @include breakpoint-md {
+    padding: 30px;
+  }
+
+  @include breakpoint-xl {
+    padding: 43px 80px;
+    max-height: 131px;
+  }
+}
+
