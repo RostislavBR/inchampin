@@ -1,0 +1,30 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+.hero_section {
+  @include flex-center-vertical();
+
+  width: 100%;
+  gap: 40px;
+  padding: 0 0 40px 0;
+
+  transition: all 0.2s ease-in-out;
+
+  @include breakpoint-xl {
+    gap: 50px;
+  }
+
+  @include breakpoint-md {
+    gap: 18px;
+  }
+
+  @include breakpoint-sm {
+    //gap: 21px;
+    padding: 0 40px;
+  }
+
+  @include breakpoint-xs {
+    gap: 21px;
+    padding: 0 20px;
+  }
+}

@@ -1,0 +1,34 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+.about_content_wrapper {
+  @include flex($justify: normal, $direction: column);
+
+  min-height: 100%;
+  gap: 95px;
+  padding: 119px 114px 0 0;
+  transition: all 0.2s ease-in-out;
+
+
+  @include breakpoint-xl {
+    padding: 152px 148px 0 0;
+  }
+
+  @include breakpoint-md {
+    gap: 65px;
+    padding: 80px 67px 0 0;
+  }
+
+  @include breakpoint-sm {
+    gap: 33px;
+    padding: 54px 43px 0 0;
+  }
+
+  @include breakpoint-xs {
+    @include flex($justify: flex-end, $direction: column);
+
+    min-height: auto;
+    gap: 24px;
+    padding: 56px 0 0 0;
+  }
+}

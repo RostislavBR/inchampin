@@ -1,0 +1,45 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+@keyframes visibleIn {
+  0% {
+    transform: translateX(115%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.about_content_text_wrapper {
+  @include flex($justify: normal, $align: normal, $direction: column);
+
+  gap: 100px;
+  padding: 0 5px 0 0;
+
+  &.text_visible {
+    animation: visibleIn 1s;
+  }
+
+  @include breakpoint-xs {
+    gap: 22px;
+    padding: 0 12px 0 0;
+  }
+
+  @include breakpoint-sm {
+    gap: 28px;
+  }
+
+  @include breakpoint-sm {
+    gap: 25px;
+  }
+
+  @include breakpoint-md {
+    gap: 70px;
+  }
+
+  @include breakpoint-xl {
+    gap: 125px;
+  }
+}

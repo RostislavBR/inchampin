@@ -1,0 +1,89 @@
+@import "@styles/variables";
+@import "@styles/mixins";
+
+.button {
+  width: 32px;
+  height: auto;
+  min-height: 14px;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  transition: all 0.3s ease-in-out;
+
+  position: relative;
+  z-index: 101;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $blue-2f8;
+    transition: all 0.3s ease-in-out;
+
+    @include breakpoint-xs {
+      background: $black-111;
+    }
+  }
+
+  &:before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+
+  &:after {
+    bottom: 0;
+    transform: rotate(0deg);
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $blue-2f8;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    transform: translateY(-50%);
+
+    @include breakpoint-xs {
+      background: $black-111;
+    }
+  }
+
+
+  &.active {
+    &:before {
+      transform: rotate(45deg);
+      top: 34%;
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+      bottom: 57%;
+    }
+
+    span {
+      opacity: 0;
+    }
+  }
+
+  @include breakpoint-md {
+    width: 32px;
+    min-height: 14px;
+  }
+
+  @include breakpoint-xl {
+    width: 38px;
+    min-height: 17px;
+  }
+}

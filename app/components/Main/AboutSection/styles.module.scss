@@ -1,0 +1,34 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+.about_section {
+  @include flex($justify: space-between);
+
+  width: 100%;
+  padding: 37px 0 0 0;
+
+  transition: padding-top 0.2s ease-in-out;
+
+  @include breakpoint-xs {
+    @include flex($justify: normal, $direction: column);
+
+    gap: 40px;
+    padding: 31px 0 0 0;
+  }
+
+  @include breakpoint-custom {
+    @include flex($justify: space-between, $wrap: wrap);
+  }
+
+  @include breakpoint-sm {
+    padding: 46px 0 0 0;
+  }
+
+  @include breakpoint-md {
+    padding: 35px 0 0 0;
+  }
+
+  @include breakpoint-xl {
+    padding: 59px 0 0 0;
+  }
+}

@@ -1,0 +1,21 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+.container {
+  @include flex-container($direction: column, $max-width: 1440px);
+
+  gap: 75px;
+
+
+  @include breakpoint-xs {
+    @include flex-container($direction: column, $max-width: 768px);
+
+    gap: 50px;
+  }
+
+  @include breakpoint-xl {
+    @include flex-container($direction: column, $max-width: 1920px);
+
+    gap: 110px;
+  }
+}

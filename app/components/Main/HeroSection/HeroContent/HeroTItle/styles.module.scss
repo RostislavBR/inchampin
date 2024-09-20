@@ -1,0 +1,60 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+.hero_content_title_wrapper {
+  @include flex($justify: start);
+  padding: 37px 0 0 0;
+
+  .hero_content_title {
+    width: 100%;
+    font-size: $font-size-26;
+    font-weight: $text-normal;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: $blue-2f8;
+    transition: font-size ease-in-out 0.2s;
+    animation: slideIn .5s 0.2s;
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+
+    @include breakpoint-xs {
+      font-size: $font-size-13;
+    }
+
+    @include breakpoint-md {
+      font-size: $font-size-19;
+    }
+
+    @include breakpoint-xl {
+      font-size: $font-size-31;
+    }
+  }
+
+  @include breakpoint-xs {
+    padding: 0;
+  }
+
+  @include breakpoint-sm {
+    padding: 0;
+  }
+
+  @include breakpoint-md {
+    padding: 45px 0 0 22px;
+  }
+
+  @include breakpoint-xl {
+    padding: 62px 0 0 0;
+  }
+}
+
+

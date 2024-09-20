@@ -1,0 +1,17 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+.header_select_wrapper {
+  @include flex($justify: start);
+
+  min-width: 204px;
+
+  @include breakpoint-xs {
+    display: none;
+  }
+
+  @include breakpoint-sm {
+    min-width: 188px;
+    order: 4;
+  }
+}

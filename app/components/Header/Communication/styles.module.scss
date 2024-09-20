@@ -1,0 +1,93 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+.communication_wrapper {
+  @include flex($justify: end);
+
+  gap: 40px;
+
+  .communication_phone {
+    font-size: $font-size-14;
+    font-weight: $text-semiBold;
+    line-height: 100%;
+    color: $black-111;
+    transition: font-size 0.2s ease-in-out;
+
+    @include breakpoint-md {
+      font-size: $font-size-13;
+    }
+
+    @include breakpoint-xl {
+      font-size: $font-size-17;
+    }
+  }
+
+  .communication_link {
+    min-width: 135px;
+    min-height: 12px;
+    font-size: $font-size-13;
+    font-weight: $text-semiBold;
+    line-height: 100%;
+    letter-spacing: 0.91px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+
+    .text_content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $blue-2f8;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .text_content:first-child {
+      transform: translateY(100%);
+    }
+
+    .text_content:last-child {
+      transform: translateY(0);
+    }
+
+    &:hover .text_content:first-child {
+      transform: translateY(0);
+    }
+
+    &:hover .text_content:last-child {
+      transform: translateY(-100%);
+    }
+
+
+    @include breakpoint-md {
+      font-size: $font-size-12;
+      letter-spacing: 0.84px;
+    }
+
+    @include breakpoint-xl {
+      font-size: $font-size-15;
+      letter-spacing: 1.05px;
+    }
+  }
+
+  @include breakpoint-xs {
+    display: none;
+  }
+
+  @include breakpoint-sm {
+    display: none;
+  }
+
+  @include breakpoint-md {
+    gap: 35px;
+    padding-top: 4px;
+  }
+
+  @include breakpoint-xl {
+    gap: 40px;
+  }
+}

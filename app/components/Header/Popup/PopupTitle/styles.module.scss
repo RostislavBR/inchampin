@@ -1,0 +1,29 @@
+@import "app/styles/variables";
+@import "app/styles/mixins";
+
+.popup_title_wrapper {
+  @include flex($justify: center);
+
+  width: 100%;
+
+  .popup_title {
+    font-size: $font-size-28;
+    font-weight: $text-normal;
+    text-transform: uppercase;
+    color: $black-000;
+  }
+
+  @include breakpoint-xs {
+    @include flex($justify: start);
+
+    font-size: $font-size-20;
+  }
+  
+  @include breakpoint-custom {
+    @include flex($justify: center);
+  }
+
+  @include breakpoint-xl {
+    font-size: $font-size-40;
+  }
+}

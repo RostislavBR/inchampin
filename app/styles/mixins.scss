@@ -1,0 +1,80 @@
+@mixin flex($justify: center, $align: center, $direction: row, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-center-vertical($direction: column, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-horizontal($direction: row, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: center;
+}
+
+@mixin flex-container($justify: center, $align: center, $direction: row, $wrap: nowrap, $max-width) {
+  @include flex($justify, $align, $direction, $wrap);
+
+  width: 100%;
+  height: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+@mixin breakpoint-xs {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-sm {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-md {
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xl {
+  @media (min-width: 1770px) and (max-width: 1920px) {
+    @content;
+  }
+}
+
+
+@mixin breakpoint-custom {
+  @media (min-width: 590px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+
+@mixin image-style($width: 100%, $height: auto, $maxWidth: 100%, $minHeight: 100%, $objectFitness: cover) {
+  display: block;
+  width: $width;
+  height: $height;
+  max-width: $maxWidth;
+  min-height: $minHeight;
+  object-fit: $objectFitness;
+}
+
+
+@mixin svg-logo-style($width, $height, $margin: 0) {
+  display: block;
+  width: $width;
+  height: $height;
+  margin: $margin;
+}
